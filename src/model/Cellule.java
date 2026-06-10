@@ -1,5 +1,6 @@
 package model;
 
+import static model.TypeCellule.EAU;
 import static model.TypeCellule.SOL;
 
 public class Cellule {
@@ -70,5 +71,11 @@ public class Cellule {
 
     public void setLeRobot(Robot leRobot) {
         this.leRobot = leRobot;
+    }
+
+    // Méthodes publiques
+
+    public boolean isFranchissable(){
+        return (!(leType==EAU || leRobot != null));
     }
 }
