@@ -2,8 +2,23 @@ package model;
 
 public class Robot {
 
-    private int capacité;
+    private int capacite;
     private int stock;
+
+    public Robot(int capacité) {
+        this.capacite = capacité;
+        this.stock = 0;
+    }
+
+    // Getters
+
+    public int getCapacite() {
+        return capacite;
+    }
+
+    public int getStock() {
+        return stock;
+    }
 
     public void miner(Mine mine){
         mine.extraire();

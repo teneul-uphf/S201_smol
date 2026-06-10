@@ -61,4 +61,14 @@ public class Cellule {
     public TypeCellule getLeType() {
         return leType;
     }
+
+    // Setters
+
+    public void setLeLieu(Lieu leLieu) {
+        this.leLieu = leLieu;
+    }
+
+    public void setLeRobot(Robot leRobot) {
+        this.leRobot = leRobot;
+    }
 }

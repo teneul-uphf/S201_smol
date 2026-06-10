@@ -8,7 +8,16 @@ public class Mine implements Lieu {
         this.stock = stock;
     }
 
+    // Getters
+
+
+    public int getStock() {
+        return stock;
+    }
+
     public void extraire() {
         this.stock--;
     }
+
+
 }

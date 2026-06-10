@@ -10,6 +10,16 @@ public class Entrepot implements Lieu {
         this.stock=0;
     }
 
+    // Getters
+
+    public int getCapacite() {
+        return capacite;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
     public void deposer() {
         this.stock++;
     }
