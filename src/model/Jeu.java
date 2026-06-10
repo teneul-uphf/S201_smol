@@ -78,6 +78,8 @@ public class Jeu {
         this.ajouterALaGrille(leRobot);
     }
 
+    // Getters
+
     public Robot getLeRobot() {
         return leRobot;
     }
