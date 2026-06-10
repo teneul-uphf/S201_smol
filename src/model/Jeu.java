@@ -47,6 +47,7 @@ public class Jeu {
                     this.laGrille[noLigne][noColonne].getLeType()!=EAU){
 
                 this.laGrille[noLigne][noColonne].setLeLieu(lieu);
+                lieu.setCoordonnees(noLigne, noColonne);
                 ajoute = true;
             }
         }
@@ -151,7 +152,7 @@ public class Jeu {
             Action actionJoueur = this.joueur.getAction(this);
 
             if (actionJoueur == BOUGER){
-                Direction directionJoueur = this.joueur.getDirection();
+                Direction directionJoueur = this.joueur.getDirection(this);
                 deplacer(this.leRobot, directionJoueur);
             }
         }

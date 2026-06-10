@@ -25,30 +25,6 @@ public class Cellule {
         this.leLieu = null;
     }
 
-    // Constructeur avec robot
-
-    public Cellule(Robot leRobot) {
-        this.leType = SOL;
-        this.leRobot = leRobot;
-        this.leLieu = null;
-    }
-
-    // Constructeur avec lieu
-
-    public Cellule(Lieu leLieu) {
-        this.leType = SOL;
-        this.leRobot = null;
-        this.leLieu = leLieu;
-    }
-
-    // Constructeur avec robot et lieu
-
-    public Cellule(Robot leRobot, Lieu leLieu) {
-        this.leType = SOL;
-        this.leRobot = leRobot;
-        this.leLieu = leLieu;
-    }
-
     // Getters
 
     public Lieu getLeLieu() {

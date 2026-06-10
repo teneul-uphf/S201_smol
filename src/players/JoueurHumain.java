@@ -36,7 +36,7 @@ public class JoueurHumain implements Joueur{
         return action;
     }
 
-    public Direction getDirection(){
+    public Direction getDirection(Jeu jeu){
         Direction direction = null;
 
         while (direction == null){

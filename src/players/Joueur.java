@@ -7,5 +7,5 @@ import model.Jeu;
 public interface Joueur {
 
     Action getAction(Jeu jeu);
-    Direction getDirection();
+    Direction getDirection(Jeu jeu);
 }
