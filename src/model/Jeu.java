@@ -137,8 +137,6 @@ public class Jeu {
             default -> throw new WtfException("wtf");
         }
 
-        System.out.print(isNotHorsJeu(noLigneDestination, noColonneDestination));
-
         if (isNotHorsJeu(noLigneDestination, noColonneDestination)){
             if(this.laGrille[noLigneDestination][noColonneDestination].isFranchissable()){
                 this.laGrille[noLigneDestination][noColonneDestination].setLeRobot(robot);
@@ -152,16 +150,13 @@ public class Jeu {
 
     public void tourDeJeu(){
 
-        while (this.lEntrepot.getCapacite() > this.lEntrepot.getStock()){
+        AffichageCLI.afficher(this);
 
-            AffichageCLI.afficher(this);
+        Action actionJoueur = this.joueur.getAction(this);
 
-            Action actionJoueur = this.joueur.getAction(this);
-
-            if (actionJoueur == BOUGER){
-                Direction directionJoueur = this.joueur.getDirection(this);
-                deplacer(this.leRobot, directionJoueur);
-            }
+        if (actionJoueur == BOUGER){
+            Direction directionJoueur = this.joueur.getDirection(this);
+            deplacer(this.leRobot, directionJoueur);
         }
     }
 

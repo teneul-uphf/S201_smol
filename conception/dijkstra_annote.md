@@ -1,6 +1,6 @@
 # L'algorithme de Dijkstra en Java
 
-## Pseudocode
+## Pseudocode complet
 
 D'après [Wikipédia](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm#Pseudocode) :
 
@@ -31,7 +31,7 @@ D'après [Wikipédia](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm#Pseud
 19      return dist[], prev[] // Retourne la distance minimale de la source vers chaque noeud, et la liste des noeuds précédant chaque noeud.
 ```
 
-## Implémentation en Java
+### Implémentation en Java
 
 | Élément du pseudocode | Rôle                                                                       | Type Java / Classe                                                         |
 |-----------------------|----------------------------------------------------------------------------|----------------------------------------------------------------------------|
@@ -41,9 +41,68 @@ D'après [Wikipédia](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm#Pseud
 | `prev[v]`             | Lier un noeud `v` à celui qui le précède                                   | `HashMap<Noeud, Noeud>`                                                    |
 | `Q:vertexSet`         | Queue listant des noeuds à explorer                                        | `PriorityQueue`                                                            |
 
-```java
+Dans mon cas, il n'y a pas de pondération des arêtes. Je vais simplifier l'algorithme.
 
-```
+## Dijkstra sans pondération
+
+Fonction dijkstra(Jeu jeu) -> pile:
+
+- distances : dictionnaire<Noeud noeud, int distanceDeLaSource> vide
+- precedents : dictionnaire<Noeud noeud, Noeud noeud precendent> vide
+- aExplorer : queue des nœuds à explorer vide
+
+- Noeud source = nouveau Noeud(noLigneRobot, noColonneRobot)
+- mettre (source, 0) dans distances 
+- mettre source dans aExplorer 
+
+- Noeud arrivee = null (pas trouvée)
+- pour chaque noeud d'aExplorer :
+  - si l'arrivée n'est pas trouvée :
+    - récuperer ses voisins et les mettre dans la queue noeudsVoisins
+    - pour chaque noeudVoisin de noeudsVoisins :
+      - s'il est de distance inconnue et que l'arrivée n'est pas trouvée :
+        - ajouter (noeudVoisin, distances[noeud]+1) à distances
+        - ajouter noeudVoisin à aExplorer
+        - s'il est des mêmes coordonnées que l'objectif :
+          - arrivee = noeudVoisin
+    - supprimer le noeud d'aExplorer
+
+- chemin : pile
+- noeud n = arrivee
+- piler arrivee à chemin
+
+- Tant que precedent[n] n'est pas null:
+  - piler precedent[n] à chemin
+  - n est maintenant precedent[n]
+
+- renvoyer chemin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ---
 Prompt Claude
