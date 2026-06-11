@@ -91,6 +91,15 @@ public class Jeu {
 
     // Getters
 
+
+    public int getLargeur() {
+        return largeur;
+    }
+
+    public int getHauteur() {
+        return hauteur;
+    }
+
     public Robot getLeRobot() {
         return leRobot;
     }
@@ -107,15 +116,13 @@ public class Jeu {
         return laGrille;
     }
 
-    // Méthodes privées
+    // Méthodes publiques
 
-    private boolean isNotHorsJeu(int noLigne, int noColonne){
+    public boolean isNotHorsJeu(int noLigne, int noColonne){
         // Renvoie true si les coordonnées sont hors terrain
 
         return (noLigne >= 0 && noLigne <= this.hauteur - 1 && noColonne >= 0 && noColonne <= this.largeur - 1);
     }
-
-    // Méthodes publiques
 
     public void deplacer(Robot robot, Direction direction) throws WtfException {
 
@@ -157,4 +164,5 @@ public class Jeu {
             }
         }
     }
+
 }
